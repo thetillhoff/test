@@ -1,0 +1,22 @@
+name: "Terraform Apply DEV"
+
+on:
+  workflow_dispatch: # on manual trigger in github
+    inputs:
+      environment:
+        description: "Choose an env to deploy to"
+        required: true
+        type: string
+
+permissions:
+  contents: read    # This is required for actions/checkout
+  id-token: write  
+
+jobs:
+  something:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.enviroment }}
+    steps:
+      - run: |
+          echo "${{ inputs.environment }}"
+          echo "${{ vars.prd_only }}"
