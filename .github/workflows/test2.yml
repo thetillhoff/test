@@ -12,8 +12,7 @@ jobs:
 
       - name: Install pre-commit and dependencies
         run: |
-          echo ${{ github.event.pull_request.base.ref }}
-          echo ${{ github.ref }}
-          echo ${{ github.head_ref }}
-          echo ${{ github.base_ref }}
-          
+          echo ${{ github.event.pull_request.base.ref }} #main -> target
+          echo ${{ github.ref }} #refs/pull/1/merge
+          echo ${{ github.head_ref }} #test -> source
+          echo ${{ github.base_ref }} #main -> target
