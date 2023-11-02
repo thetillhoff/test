@@ -16,4 +16,4 @@ jobs:
           echo ${{ github.ref }} #refs/pull/1/merge
           echo ${{ github.head_ref }} #test -> source
           echo ${{ github.base_ref }} #main -> target
-          echo $(ls)
+          echo $(git log --pretty=format:'%h' -n 1)
